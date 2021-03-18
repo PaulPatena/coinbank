@@ -20,7 +20,7 @@
                     {{getPercentChange}}
                   </span>
                 </h2>
-                <p>Since: {{getPercentChangeSince}}</p>
+                <p v-if="getPercentChangeSince">Since: {{getPercentChangeSince}}</p>
               </v-col>
             </v-row>
           </v-container>
