@@ -1,11 +1,11 @@
 # coinbank
-This project uses Vuex to demonstrate the MVC pattern for modern front-end. Whilst, Vuex might be an overkill for such a small project it is really powerful as your project becomes big. You separate all your business logic into actions/mutations (Controller), your Vue components (View) are simply presentation layer of your store (model) data.
+This project uses Vuex to demonstrate the MVC pattern for modern front-end. Whilst, Vuex might be an overkill for such a small project it is really powerful as your project becomes big. You separate all your business logic into actions/mutations (Controller), your Vue components (View) are simply presentation layer of your store (Model) data.
 
 ## Solution Logic
-1. When you load the app, you retrieve value from local storage.
+1. When you load the app, you retrieve Preferred Coin from local storage.
 2. We have two routes which are basically presentation layer of the same store and actions.
-3. When route is activated, data is fetched from the backend, upon completion stored into to localStorage. Additionally, if a previous entry for a particular tracker exist in localStorage, it will be calculated and present to user.
-4. In reaction to user input, we will retrieve new config data.
+3. When route is activated, data is fetched from the backend for selected Coin, upon completion price and timestamp are stored into to localStorage. Additionally, if a previous entry for a selected Coin exist in localStorage, % change is calculated, commited to store and presented to user.
+4. For every change in user selection, we will retrieve corresponding data as in #3.
 
 ## Project setup
 ```
