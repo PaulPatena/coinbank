@@ -10,12 +10,17 @@
           <path class="logo" :d="coinTreeLogo" :fill="fontColor"></path>
         </svg>
       </div>
+
       <v-btn v-for="imp in implementations" :key="imp.routeName" text class="ml-2"
         @click="$router.push(imp.routeName)"
         :outlined="$route.name === imp.routeName">
         {{ imp.text }}
       </v-btn>
       <v-spacer></v-spacer>
+      
+      <v-btn icon class="mr-2" href="https://github.com/PaulPatena/coinbank" target="_blank">
+        <v-icon>mdi-github</v-icon>
+      </v-btn>
 
       <div class="d-flex align-center">
         <v-switch
