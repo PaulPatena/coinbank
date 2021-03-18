@@ -9,12 +9,14 @@ export default new Vuex.Store({
     preferredCoin: localStorage.getItem('preferredCoin') !== null ? localStorage.getItem('preferredCoin') : 'BTC',
     percentChange: null,
     percentChangeSince: null,
+    askValue: null,
   },
   getters: {
     getCoinChoices: state => (state.coinChoices),
     getPreferredCoin: state => (state.preferredCoin),
     getPercentChange: state => (state.percentChange),
     getPercentChangeSince: state => (state.percentChangeSince),
+    getAskValue: state => (state.askValue),
   },
   mutations: {
     setPreferredCoin(state, coin) {
@@ -46,6 +48,7 @@ export default new Vuex.Store({
         state.percentChangeSince = null;
       }
 
+      state.askValue = (payload.price).toLocaleString();
       localStorage.setItem(`${payload.coin}-price`, payload.price);
       localStorage.setItem(`${payload.coin}-timestamp`, payload.timestamp);
     }

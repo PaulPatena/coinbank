@@ -13,7 +13,7 @@
                   v-model="preferredCoin"
                   @change="coinChangedHandler(preferredCoin)"
                 ></v-select>
-                
+                <h1 v-if="getAskValue">Price: {{getAskValue}}</h1>
                 <h2 v-if="getPercentChange">
                   Change:
                   <span :class="{'red--text': getPercentChange.startsWith('-')}">
@@ -41,7 +41,7 @@ export default {
   }),
 
   computed: {
-    ...mapGetters(['getCoinChoices', 'getPreferredCoin', 'getPercentChange', 'getPercentChangeSince']),
+    ...mapGetters(['getCoinChoices', 'getPreferredCoin', 'getPercentChange', 'getPercentChangeSince', 'getAskValue']),
   },
 
   methods: {
